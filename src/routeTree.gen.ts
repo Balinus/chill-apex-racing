@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CarsRouteImport } from './routes/cars'
+import { Route as TeamsRouteImport } from './routes/teams'
+import { Route as TracksRouteImport } from './routes/tracks'
+import { Route as ChampionshipsIndexRouteImport } from './routes/championships.index'
+import { Route as ChampionshipsIdRouteImport } from './routes/championships.$id'
+import { Route as DriversIndexRouteImport } from './routes/drivers.index'
+import { Route as DriversDriverIdRouteImport } from './routes/drivers.$driverId'
+import { Route as EventsIndexRouteImport } from './routes/events.index'
+import { Route as EventsIdRouteImport } from './routes/events.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CarsRoute = CarsRouteImport.update({
+  id: '/cars',
+  path: '/cars',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TeamsRoute = TeamsRouteImport.update({
+  id: '/teams',
+  path: '/teams',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TracksRoute = TracksRouteImport.update({
+  id: '/tracks',
+  path: '/tracks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChampionshipsIndexRoute = ChampionshipsIndexRouteImport.update({
+  id: '/championships/',
+  path: '/championships/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ChampionshipsIdRoute = ChampionshipsIdRouteImport.update({
+  id: '/championships/$id',
+  path: '/championships/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DriversIndexRoute = DriversIndexRouteImport.update({
+  id: '/drivers/',
+  path: '/drivers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DriversDriverIdRoute = DriversDriverIdRouteImport.update({
+  id: '/drivers/$driverId',
+  path: '/drivers/$driverId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsIndexRoute = EventsIndexRouteImport.update({
+  id: '/events/',
+  path: '/events/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsIdRoute = EventsIdRouteImport.update({
+  id: '/events/$id',
+  path: '/events/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cars': typeof CarsRoute
+  '/teams': typeof TeamsRoute
+  '/tracks': typeof TracksRoute
+  '/championships/$id': typeof ChampionshipsIdRoute
+  '/drivers/$driverId': typeof DriversDriverIdRoute
+  '/events/$id': typeof EventsIdRoute
+  '/championships/': typeof ChampionshipsIndexRoute
+  '/drivers/': typeof DriversIndexRoute
+  '/events/': typeof EventsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cars': typeof CarsRoute
+  '/teams': typeof TeamsRoute
+  '/tracks': typeof TracksRoute
+  '/championships/$id': typeof ChampionshipsIdRoute
+  '/drivers/$driverId': typeof DriversDriverIdRoute
+  '/events/$id': typeof EventsIdRoute
+  '/championships': typeof ChampionshipsIndexRoute
+  '/drivers': typeof DriversIndexRoute
+  '/events': typeof EventsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cars': typeof CarsRoute
+  '/teams': typeof TeamsRoute
+  '/tracks': typeof TracksRoute
+  '/championships/$id': typeof ChampionshipsIdRoute
+  '/drivers/$driverId': typeof DriversDriverIdRoute
+  '/events/$id': typeof EventsIdRoute
+  '/championships/': typeof ChampionshipsIndexRoute
+  '/drivers/': typeof DriversIndexRoute
+  '/events/': typeof EventsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/cars'
+    | '/teams'
+    | '/tracks'
+    | '/championships/$id'
+    | '/drivers/$driverId'
+    | '/events/$id'
+    | '/championships/'
+    | '/drivers/'
+    | '/events/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cars'
+    | '/teams'
+    | '/tracks'
+    | '/championships/$id'
+    | '/drivers/$driverId'
+    | '/events/$id'
+    | '/championships'
+    | '/drivers'
+    | '/events'
+  id:
+    | '__root__'
+    | '/'
+    | '/cars'
+    | '/teams'
+    | '/tracks'
+    | '/championships/$id'
+    | '/drivers/$driverId'
+    | '/events/$id'
+    | '/championships/'
+    | '/drivers/'
+    | '/events/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CarsRoute: typeof CarsRoute
+  TeamsRoute: typeof TeamsRoute
+  TracksRoute: typeof TracksRoute
+  ChampionshipsIdRoute: typeof ChampionshipsIdRoute
+  DriversDriverIdRoute: typeof DriversDriverIdRoute
+  EventsIdRoute: typeof EventsIdRoute
+  ChampionshipsIndexRoute: typeof ChampionshipsIndexRoute
+  DriversIndexRoute: typeof DriversIndexRoute
+  EventsIndexRoute: typeof EventsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cars': {
+      id: '/cars'
+      path: '/cars'
+      fullPath: '/cars'
+      preLoaderRoute: typeof CarsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/teams': {
+      id: '/teams'
+      path: '/teams'
+      fullPath: '/teams'
+      preLoaderRoute: typeof TeamsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tracks': {
+      id: '/tracks'
+      path: '/tracks'
+      fullPath: '/tracks'
+      preLoaderRoute: typeof TracksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/championships/': {
+      id: '/championships/'
+      path: '/championships'
+      fullPath: '/championships/'
+      preLoaderRoute: typeof ChampionshipsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/championships/$id': {
+      id: '/championships/$id'
+      path: '/championships/$id'
+      fullPath: '/championships/$id'
+      preLoaderRoute: typeof ChampionshipsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/drivers/': {
+      id: '/drivers/'
+      path: '/drivers'
+      fullPath: '/drivers/'
+      preLoaderRoute: typeof DriversIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/drivers/$driverId': {
+      id: '/drivers/$driverId'
+      path: '/drivers/$driverId'
+      fullPath: '/drivers/$driverId'
+      preLoaderRoute: typeof DriversDriverIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/': {
+      id: '/events/'
+      path: '/events'
+      fullPath: '/events/'
+      preLoaderRoute: typeof EventsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events/$id': {
+      id: '/events/$id'
+      path: '/events/$id'
+      fullPath: '/events/$id'
+      preLoaderRoute: typeof EventsIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CarsRoute: CarsRoute,
+  TeamsRoute: TeamsRoute,
+  TracksRoute: TracksRoute,
+  ChampionshipsIdRoute: ChampionshipsIdRoute,
+  DriversDriverIdRoute: DriversDriverIdRoute,
+  EventsIdRoute: EventsIdRoute,
+  ChampionshipsIndexRoute: ChampionshipsIndexRoute,
+  DriversIndexRoute: DriversIndexRoute,
+  EventsIndexRoute: EventsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
