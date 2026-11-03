@@ -20,7 +20,7 @@ export const Route = createFileRoute("/")({
 
 const sections = [
   { title: "Drivers", desc: "View driver profiles, ratings, and performance history", path: "/drivers" },
-  { title: "Championships", desc: "Browse active and past championships and see the standings", path: "/championships" },
+  { title: "Championships", desc: "Current and past championships — full history and final standings", path: "/championships" },
   { title: "Race Events", desc: "Browse upcoming and completed race events and results", path: "/events" },
   { title: "Teams", desc: "Explore team rosters and championship entries", path: "/teams" },
   { title: "Cars", desc: "Browse the cars we race with", path: "/cars" },
