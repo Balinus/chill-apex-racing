@@ -71,13 +71,13 @@ export function parseStandings(raw: Record<string, unknown>[]): StandingRow[] {
         });
       }
     }
-    const first = String(r.FirstName ?? "").trim();
-    const last = String(r.LastName ?? "").trim();
+    const first = String(r["FirstName"] ?? "").trim();
+    const last = String(r["LastName"] ?? "").trim();
     return {
-      driverId: String(r.SteamId ?? r.Fullname),
-      name: String(r.Fullname ?? `${first} ${last}`),
+      driverId: String(r["SteamId"] ?? r["Fullname"]),
+      name: String(r["Fullname"] ?? `${first} ${last}`),
       realName: `${first} ${last}`.trim(),
-      country: String(r.CountryCode ?? ""),
+      country: String(r["CountryCode"] ?? ""),
       total: races.reduce((s, x) => s + x.points, 0),
       races,
     };

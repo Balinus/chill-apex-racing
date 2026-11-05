@@ -1,3 +1,3 @@
 # Roadmap
 - [x] Home page for Silver Brothers Racing (Discord + JustRace links)
-- [x] Championship history — links to past championships on JustRace
+- [x] Drivers, Championships, Events, Teams, Cars, Tracks pages auto-filled from JustRace

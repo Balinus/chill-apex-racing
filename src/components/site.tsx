@@ -35,7 +35,7 @@ export function SiteHeader() {
   );
 }
 
-export function PageHeader({ title, subtitle, children }: { title: string; subtitle?: string; children?: ReactNode }) {
+export function PageHeader({ title, subtitle, children }: { title: string; subtitle?: string | undefined; children?: ReactNode }) {
   return (
     <div className="border-b bg-card/40">
       <div className="mx-auto max-w-6xl px-6 py-12">

@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import hero from "@/assets/hero-racing.jpg";
 
 const DISCORD = "https://www.discord.gg/YVWCtyACXj";
@@ -25,7 +25,7 @@ const sections = [
   { title: "Teams", desc: "Explore team rosters and championship entries", path: "/teams" },
   { title: "Cars", desc: "Browse the cars we race with", path: "/cars" },
   { title: "Tracks", desc: "All the tracks we've raced on", path: "/tracks" },
-];
+] as const;
 
 function Index() {
   return (
@@ -59,13 +59,13 @@ function Index() {
         <h2 className="font-display text-4xl tracking-wide text-silver">Explore the League</h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {sections.map((s) => (
-            <a key={s.title} href={`${JR}${s.path}`} target="_blank" rel="noreferrer"
+            <Link key={s.title} to={s.path}
               className="group relative overflow-hidden rounded-sm border bg-card p-6 transition hover:-translate-y-1 hover:border-primary">
               <div className="absolute left-0 top-0 h-full w-1 bg-primary opacity-0 transition group-hover:opacity-100" />
               <h3 className="font-display text-3xl tracking-wide">{s.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
               <span className="mt-4 inline-block text-sm font-semibold uppercase tracking-wider text-primary">Open →</span>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

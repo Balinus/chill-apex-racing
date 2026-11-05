@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- League data (championships, events, drivers, tracks, cars) is fetched live from the public JustRace API in `src/lib/justrace.functions.ts` via one cached server function — no database, so pages stay in sync with JustRace automatically.
