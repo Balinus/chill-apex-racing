@@ -38,20 +38,20 @@
 
 :root {
   --radius: 0.125rem;
-  --background: oklch(0.965 0.006 85);
+  --background: oklch(0.985 0.002 250);
   --foreground: oklch(0.2 0.015 255);
-  --card: oklch(0.99 0.003 85);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.2 0.015 255);
-  --popover: oklch(0.99 0.003 85);
+  --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.015 255);
   --primary: oklch(0.63 0.2 52);
   --primary-foreground: oklch(0.18 0.015 255);
-  --secondary: oklch(0.91 0.009 85);
+  --secondary: oklch(0.94 0.004 250);
   --secondary-foreground: oklch(0.24 0.015 255);
-  --muted: oklch(0.925 0.007 85);
+  --muted: oklch(0.95 0.003 250);
   --muted-foreground: oklch(0.46 0.015 255);
   --accent: oklch(0.25 0.015 255);
-  --accent-foreground: oklch(0.97 0.005 85);
+  --accent-foreground: oklch(0.98 0.002 250);
   --destructive: oklch(0.55 0.21 27);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.2 0.015 255 / 18%);
@@ -88,15 +88,6 @@
 @utility bg-hero-fade { background: var(--gradient-hero); }
 @utility shadow-glow { box-shadow: var(--shadow-glow); }
 @utility shadow-panel { box-shadow: var(--shadow-panel); }
-@utility racing-stripe {
-  background: repeating-linear-gradient(-45deg, var(--primary) 0 12px, var(--foreground) 12px 24px);
-}
-@utility technical-grid {
-  background-image:
-    linear-gradient(var(--border) 1px, transparent 1px),
-    linear-gradient(90deg, var(--border) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
 @utility clip-panel {
   clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
 }
