@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { ArrowUpRight } from "lucide-react";
 import type { ReactNode } from "react";
 
 export const DISCORD_URL = "https://www.discord.gg/YVWCtyACXj";
@@ -15,41 +16,68 @@ const nav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b bg-background/85 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center gap-6 px-6 py-3">
-        <Link to="/" className="font-display text-2xl tracking-wide text-chrome">SBR</Link>
-        <nav className="flex flex-1 gap-4 overflow-x-auto text-sm font-semibold uppercase tracking-wider">
+    <header className="sticky top-0 z-30 border-b border-t-4 border-t-primary bg-background/95 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center gap-5 px-5 py-3 md:px-8">
+        <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Silver Brothers Racing home">
+          <span className="clip-panel flex h-11 w-11 items-center justify-center bg-foreground font-display text-2xl font-bold italic text-background">SB</span>
+          <span className="hidden font-mono text-[10px] font-semibold uppercase leading-4 tracking-[0.18em] text-muted-foreground sm:block">
+            Silver Brothers<br /><span className="text-foreground">Racing League</span>
+          </span>
+        </Link>
+        <nav className="flex flex-1 gap-5 overflow-x-auto px-1 font-mono text-[11px] font-semibold uppercase tracking-wider" aria-label="Main navigation">
           {nav.map((n) => (
-            <Link key={n.to} to={n.to} className="whitespace-nowrap text-muted-foreground transition hover:text-foreground"
-              activeProps={{ className: "text-primary" }}>
+            <Link key={n.to} to={n.to}
+              className="whitespace-nowrap border-b-2 border-transparent py-2 text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
+              activeProps={{ className: "border-primary text-foreground" }}>
               {n.label}
             </Link>
           ))}
         </nav>
         <a href={DISCORD_URL} target="_blank" rel="noreferrer"
-          className="hidden rounded-sm bg-discord px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-discord-foreground sm:block">
-          Discord
+          className="hidden shrink-0 items-center gap-2 border border-foreground px-3 py-2 font-mono text-[10px] font-semibold uppercase tracking-wider transition-colors hover:bg-foreground hover:text-background md:flex">
+          Discord <ArrowUpRight className="h-3.5 w-3.5" />
         </a>
       </div>
     </header>
   );
 }
 
+export function SiteFooter() {
+  return (
+    <footer className="bg-foreground text-background">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-8 md:flex-row md:items-end md:justify-between md:px-8">
+        <div>
+          <div className="font-display text-3xl font-bold uppercase italic">Silver Brothers Racing</div>
+          <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-background/60">Clean racing. Close battles. One community.</p>
+        </div>
+        <div className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[10px] uppercase tracking-wider">
+          <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="hover:text-primary">Discord ↗</a>
+          <a href={JUSTRACE_URL} target="_blank" rel="noreferrer" className="hover:text-primary">JustRace ↗</a>
+          <span className="text-background/50">© {new Date().getFullYear()} SBR</span>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
 export function PageHeader({ title, subtitle, children }: { title: string; subtitle?: string | undefined; children?: ReactNode }) {
   return (
-    <div className="border-b bg-card/40">
-      <div className="mx-auto max-w-6xl px-6 py-12">
-        <div className="racing-stripe mb-4 h-1.5 w-16" />
-        <h1 className="font-display text-5xl tracking-wide text-chrome md:text-6xl">{title}</h1>
-        {subtitle && <p className="mt-3 max-w-2xl text-muted-foreground">{subtitle}</p>}
+    <section className="technical-grid relative overflow-hidden border-b">
+      <div className="absolute inset-y-0 right-0 hidden w-1/4 bg-secondary/70 lg:block" />
+      <div className="relative mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
+        <div className="flex items-center gap-3 font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          <span className="h-2 w-8 bg-primary" /> SBR / Race control
+        </div>
+        <h1 className="mt-4 max-w-5xl font-display text-6xl font-bold uppercase leading-[0.9] tracking-tight md:text-8xl">{title}</h1>
+        {subtitle && <p className="mt-5 max-w-2xl text-lg text-muted-foreground">{subtitle}</p>}
         {children}
       </div>
-    </div>
+    </section>
   );
 }
 
 export function Page({ children }: { children: ReactNode }) {
-  return <div className="mx-auto max-w-6xl px-6 py-10">{children}</div>;
+  return <div className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16">{children}</div>;
 }
 
 export function Flag({ code }: { code: string }) {
@@ -60,24 +88,24 @@ export function Flag({ code }: { code: string }) {
 
 export function Badge({ children, tone = "muted" }: { children: ReactNode; tone?: "muted" | "primary" }) {
   return (
-    <span className={`rounded-sm px-2 py-0.5 text-xs font-semibold uppercase tracking-wider ${tone === "primary" ? "bg-primary text-primary-foreground" : "bg-secondary text-muted-foreground"}`}>
+    <span className={`border px-2 py-1 font-mono text-[10px] font-semibold uppercase tracking-wider ${tone === "primary" ? "border-primary bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground"}`}>
       {children}
     </span>
   );
 }
 
 export function Empty({ children }: { children: ReactNode }) {
-  return <div className="rounded-sm border border-dashed p-10 text-center text-muted-foreground">{children}</div>;
+  return <div className="technical-grid border border-dashed bg-card p-10 text-center text-muted-foreground">{children}</div>;
 }
 
 export function DataNote() {
   return (
-    <p className="mt-12 text-xs text-muted-foreground">
-      Data updates automatically from{" "}
+    <p className="mt-12 border-t pt-4 font-mono text-[10px] uppercase tracking-wider text-muted-foreground">
+      Live data / updated automatically from{" "}
       <a href={JUSTRACE_URL} target="_blank" rel="noreferrer" className="underline hover:text-foreground">JustRace</a>.
     </p>
   );
 }
 
-export const th = "px-3 py-2 text-left text-xs font-semibold uppercase tracking-wider text-muted-foreground";
-export const td = "px-3 py-2";
+export const th = "px-3 py-3 text-left font-mono text-[10px] font-semibold uppercase tracking-wider text-muted-foreground";
+export const td = "px-3 py-3";

@@ -47,7 +47,7 @@ export function entryPoints(d: Pick<RawData, "Points" | "BonusForFastestLap" | "
 
 /** Standings rows contain dynamic keys "track|schedule|...|session" whose value is JSON (string or object). */
 export function parseStandings(raw: Record<string, unknown>[]): StandingRow[] {
-  const rows = raw.map((r) => {
+  const rows = raw.filter((r) => !/\(\s*AI\s*\)/i.test(String(r["Fullname"] ?? ""))).map((r) => {
     const races: RaceEntry[] = [];
     for (const [k, v] of Object.entries(r)) {
       if (!k.includes("|")) continue;

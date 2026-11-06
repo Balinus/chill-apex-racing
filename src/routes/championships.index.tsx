@@ -30,7 +30,7 @@ function Championships() {
               const done = c.rounds.filter((r) => r.finished).length;
               return (
                 <Link key={c.id} to="/championships/$id" params={{ id: String(c.id) }}
-                  className="group overflow-hidden rounded-sm border bg-card transition hover:-translate-y-1 hover:border-primary">
+                  className="group overflow-hidden border bg-card shadow-panel transition-colors hover:border-primary">
                   {c.poster && <img src={c.poster} alt={c.name} loading="lazy" className="aspect-[16/7] w-full object-cover" />}
                   <div className="p-5">
                     <div className="flex items-center gap-2">

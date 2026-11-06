@@ -25,8 +25,8 @@ export const Route = createFileRoute("/drivers/$driverId")({
 
 function Stat({ label, value }: { label: string; value: number }) {
   return (
-    <div className="rounded-sm border bg-card p-4">
-      <div className="font-display text-4xl text-chrome">{value}</div>
+    <div className="border-l-4 border-l-primary border-y border-r bg-card p-4">
+      <div className="font-display text-4xl font-semibold">{value}</div>
       <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
     </div>
   );
