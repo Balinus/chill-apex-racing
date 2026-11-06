@@ -62,13 +62,9 @@ export function SiteFooter() {
 
 export function PageHeader({ title, subtitle, children }: { title: string; subtitle?: string | undefined; children?: ReactNode }) {
   return (
-    <section className="technical-grid relative overflow-hidden border-b">
-      <div className="absolute inset-y-0 right-0 hidden w-1/4 bg-secondary/70 lg:block" />
+    <section className="relative overflow-hidden border-b bg-secondary/50">
       <div className="relative mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
-        <div className="flex items-center gap-3 font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-          <span className="h-2 w-8 bg-primary" /> SBR / Race control
-        </div>
-        <h1 className="mt-4 max-w-5xl font-display text-6xl font-bold uppercase leading-[0.9] tracking-tight md:text-8xl">{title}</h1>
+        <h1 className="max-w-5xl font-display text-6xl font-bold uppercase leading-[0.9] tracking-tight md:text-8xl">{title}</h1>
         {subtitle && <p className="mt-5 max-w-2xl text-lg text-muted-foreground">{subtitle}</p>}
         {children}
       </div>
@@ -95,7 +91,7 @@ export function Badge({ children, tone = "muted" }: { children: ReactNode; tone?
 }
 
 export function Empty({ children }: { children: ReactNode }) {
-  return <div className="technical-grid border border-dashed bg-card p-10 text-center text-muted-foreground">{children}</div>;
+  return <div className="border border-dashed bg-card p-10 text-center text-muted-foreground">{children}</div>;
 }
 
 export function DataNote() {
