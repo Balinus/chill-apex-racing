@@ -8,6 +8,8 @@ export const Route = createFileRoute("/teams")({
       { name: "description", content: "Team rosters and team championship entries in Silver Brothers Racing." },
       { property: "og:title", content: "Teams — Silver Brothers Racing" },
       { property: "og:description", content: "Team rosters and championship entries." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Teams,

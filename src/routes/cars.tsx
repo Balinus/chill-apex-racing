@@ -10,6 +10,8 @@ export const Route = createFileRoute("/cars")({
       { name: "description", content: "Car classes raced in Silver Brothers Racing championships." },
       { property: "og:title", content: "Cars — Silver Brothers Racing" },
       { property: "og:description", content: "The cars and classes we race with." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(leagueQuery),
@@ -25,7 +27,7 @@ function Cars() {
         {data.classes.length === 0 ? <Empty>No cars yet.</Empty> : (
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {data.classes.map((c) => (
-              <div key={c.id} className="rounded-sm border bg-card p-5">
+              <div key={c.id} className="border-l-4 border-l-primary border-y border-r bg-card p-5 shadow-panel">
                 <h2 className="font-display text-3xl tracking-wide">{c.name}</h2>
                 {c.description && <p className="mt-2 text-sm text-muted-foreground">{c.description}</p>}
                 <div className="mt-4"><Badge tone="primary">{c.rounds} {c.rounds === 1 ? "race" : "races"}</Badge></div>

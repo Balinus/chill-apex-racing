@@ -10,6 +10,8 @@ export const Route = createFileRoute("/events/")({
       { name: "description", content: "Upcoming and completed Silver Brothers Racing events and results." },
       { property: "og:title", content: "Race Events — Silver Brothers Racing" },
       { property: "og:description", content: "Upcoming and completed race events and results." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(leagueQuery),
@@ -19,7 +21,7 @@ export const Route = createFileRoute("/events/")({
 function EventCard({ r }: { r: Round }) {
   return (
     <Link to="/events/$id" params={{ id: String(r.id) }}
-      className="group overflow-hidden rounded-sm border bg-card transition hover:-translate-y-1 hover:border-primary">
+      className="group overflow-hidden border bg-card shadow-panel transition-colors hover:border-primary">
       {(r.image || r.trackImage) && <img src={r.image ?? r.trackImage!} alt={r.track} loading="lazy" className="aspect-video w-full object-cover" />}
       <div className="p-4">
         <div className="text-xs uppercase tracking-wider text-primary">{r.championship} · Round {r.round} of {r.totalRounds}</div>

@@ -10,6 +10,8 @@ export const Route = createFileRoute("/tracks")({
       { name: "description", content: "Every track raced in Silver Brothers Racing championships." },
       { property: "og:title", content: "Tracks — Silver Brothers Racing" },
       { property: "og:description", content: "Every track we've raced on." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(leagueQuery),
@@ -28,7 +30,7 @@ function Tracks() {
             {data.tracks.map((t) => {
               const img = rounds.find((r) => r.trackId === t.id)?.trackImage;
               return (
-                <div key={t.id} className="overflow-hidden rounded-sm border bg-card">
+                <div key={t.id} className="overflow-hidden border bg-card shadow-panel">
                   {img && <img src={img} alt={t.name} loading="lazy" className="aspect-video w-full object-cover" />}
                   <div className="p-4">
                     <h2 className="font-display text-2xl tracking-wide">{t.name}</h2>

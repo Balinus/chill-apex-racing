@@ -21,4 +21,12 @@ describe("championship points", () => {
     ]);
     expect(rows.map((r) => [r.driverId, r.total, r.races.length])).toEqual([["b", 26, 1], ["a", 10, 1]]);
   });
+  it("excludes JustRace computer drivers without affecting human positions", () => {
+    const rows = parseStandings([
+      { SteamId: "2", Fullname: "Computer Racer (AI)", "x|1|r|9": { Data: [d({ Points: 100 })] } },
+      { SteamId: "human", Fullname: "Human Racer", "x|1|r|9": { Data: [d({ Points: 10, BonusForPolePosition: 0 })] } },
+    ]);
+
+    expect(rows.map((r) => [r.driverId, r.name, r.total])).toEqual([["human", "Human Racer", 10]]);
+  });
 });

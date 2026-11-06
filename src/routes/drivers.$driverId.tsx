@@ -17,6 +17,8 @@ export const Route = createFileRoute("/drivers/$driverId")({
           { name: "description", content: `${loaderData.name}'s results and championship history in Silver Brothers Racing.` },
           { property: "og:title", content: `${loaderData.name} — Silver Brothers Racing` },
           { property: "og:description", content: `${loaderData.name}'s results and championship history.` },
+          { property: "og:type", content: "website" },
+          { name: "twitter:card", content: "summary_large_image" },
         ]
       : [{ title: "Driver — Silver Brothers Racing" }, { name: "robots", content: "noindex" }],
   }),
@@ -25,8 +27,8 @@ export const Route = createFileRoute("/drivers/$driverId")({
 
 function Stat({ label, value }: { label: string; value: number }) {
   return (
-    <div className="rounded-sm border bg-card p-4">
-      <div className="font-display text-4xl text-chrome">{value}</div>
+    <div className="border-l-4 border-l-primary border-y border-r bg-card p-4">
+      <div className="font-display text-4xl font-semibold">{value}</div>
       <div className="text-xs uppercase tracking-wider text-muted-foreground">{label}</div>
     </div>
   );
