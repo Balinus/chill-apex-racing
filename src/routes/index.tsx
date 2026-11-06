@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import hero from "@/assets/hero-racing.jpg";
+import hero from "@/assets/group-c-endurance.jpg";
 import { DISCORD_URL, JUSTRACE_URL } from "@/components/site";
 
 export const Route = createFileRoute("/")({
@@ -59,8 +59,8 @@ function Index() {
           </div>
 
           <div className="relative min-h-[430px] bg-secondary p-5 md:p-8 lg:min-h-[690px]">
-            <div className="absolute left-0 top-0 z-10 bg-primary px-4 py-3 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-primary-foreground">SBR / On track</div>
-            <img src={hero} alt="Silver race cars battling at night" className="clip-panel h-full min-h-[390px] w-full object-cover contrast-110 saturate-75 lg:min-h-[625px]" />
+            <div className="absolute left-0 top-0 z-10 bg-primary px-4 py-3 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-primary-foreground">Group C spirit / SBR on track</div>
+            <img src={hero} alt="Silver and orange Group C endurance prototype on a wet circuit" width={1920} height={1440} className="clip-panel h-full min-h-[390px] w-full object-cover contrast-110 saturate-90 lg:min-h-[625px]" />
             <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between bg-foreground p-5 text-background md:bottom-8 md:left-8 md:right-8">
               <div>
                 <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-background/60">The next green flag</div>

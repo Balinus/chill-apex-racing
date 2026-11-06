@@ -10,6 +10,8 @@ export const Route = createFileRoute("/events/")({
       { name: "description", content: "Upcoming and completed Silver Brothers Racing events and results." },
       { property: "og:title", content: "Race Events — Silver Brothers Racing" },
       { property: "og:description", content: "Upcoming and completed race events and results." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(leagueQuery),

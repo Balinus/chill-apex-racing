@@ -10,6 +10,8 @@ export const Route = createFileRoute("/drivers/")({
       { name: "description", content: "Silver Brothers Racing driver profiles, wins, podiums and championship history." },
       { property: "og:title", content: "Drivers — Silver Brothers Racing" },
       { property: "og:description", content: "Driver profiles, wins, podiums and championship history." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(leagueQuery),

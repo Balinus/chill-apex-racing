@@ -10,6 +10,8 @@ export const Route = createFileRoute("/tracks")({
       { name: "description", content: "Every track raced in Silver Brothers Racing championships." },
       { property: "og:title", content: "Tracks — Silver Brothers Racing" },
       { property: "og:description", content: "Every track we've raced on." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   loader: ({ context }) => context.queryClient.ensureQueryData(leagueQuery),

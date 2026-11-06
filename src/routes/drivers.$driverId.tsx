@@ -17,6 +17,8 @@ export const Route = createFileRoute("/drivers/$driverId")({
           { name: "description", content: `${loaderData.name}'s results and championship history in Silver Brothers Racing.` },
           { property: "og:title", content: `${loaderData.name} — Silver Brothers Racing` },
           { property: "og:description", content: `${loaderData.name}'s results and championship history.` },
+          { property: "og:type", content: "website" },
+          { name: "twitter:card", content: "summary_large_image" },
         ]
       : [{ title: "Driver — Silver Brothers Racing" }, { name: "robots", content: "noindex" }],
   }),

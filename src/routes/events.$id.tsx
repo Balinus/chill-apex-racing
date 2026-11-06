@@ -17,6 +17,8 @@ export const Route = createFileRoute("/events/$id")({
           { name: "description", content: `Details and results for ${loaderData.title}.` },
           { property: "og:title", content: `${loaderData.title} — Silver Brothers Racing` },
           { property: "og:description", content: `Details and results for ${loaderData.title}.` },
+          { property: "og:type", content: "website" },
+          { name: "twitter:card", content: "summary_large_image" },
         ]
       : [{ title: "Event — Silver Brothers Racing" }, { name: "robots", content: "noindex" }],
   }),
