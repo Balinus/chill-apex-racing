@@ -58,7 +58,6 @@ function Index() {
               <img src={hero} alt="Representation of a Group C Sauber C9 in silver and orange livery on a wet circuit" width={1920} height={1440} className="aspect-[4/3] w-full object-cover" />
               <figcaption className="p-5 md:p-6">
                 <div className="font-mono text-xs uppercase text-background/75">SBR on track</div>
-                <div className="mt-2 font-display text-2xl font-semibold uppercase">Sauber C9 · Group C</div>
               </figcaption>
             </figure>
           </div>
