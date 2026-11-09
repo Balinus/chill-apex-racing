@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Menu } from "lucide-react";
 import type { ReactNode } from "react";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 export const DISCORD_URL = "https://www.discord.gg/YVWCtyACXj";
 export const JUSTRACE_URL = "https://silverbrothers.justrace.net";
@@ -24,19 +26,35 @@ export function SiteHeader() {
             Silver Brothers<br /><span className="text-foreground">Racing League</span>
           </span>
         </Link>
-        <nav className="flex flex-1 gap-5 overflow-x-auto px-1 font-mono text-[11px] font-semibold uppercase tracking-wider" aria-label="Main navigation">
+        <nav className="hidden flex-1 gap-4 px-1 font-mono text-[13px] font-semibold uppercase md:flex lg:gap-5" aria-label="Main navigation">
           {nav.map((n) => (
             <Link key={n.to} to={n.to}
-              className="whitespace-nowrap border-b-2 border-transparent py-2 text-muted-foreground transition-colors hover:border-primary hover:text-foreground"
+              className="whitespace-nowrap border-b-2 border-transparent py-2 text-reading transition-colors hover:border-primary hover:text-foreground"
               activeProps={{ className: "border-primary text-foreground" }}>
               {n.label}
             </Link>
           ))}
         </nav>
-        <a href={DISCORD_URL} target="_blank" rel="noreferrer"
-          className="hidden shrink-0 items-center gap-2 border border-foreground px-3 py-2 font-mono text-[10px] font-semibold uppercase tracking-wider transition-colors hover:bg-foreground hover:text-background md:flex">
-          Discord <ArrowUpRight className="h-3.5 w-3.5" />
-        </a>
+        <div className="ml-auto flex shrink-0 items-center gap-3">
+          <Button asChild className="h-11 rounded-none px-4 font-mono text-[13px] font-semibold uppercase shadow-none">
+            <a href={DISCORD_URL} target="_blank" rel="noreferrer">Discord <ArrowUpRight /></a>
+          </Button>
+          <Sheet>
+            <SheetTrigger asChild>
+              <Button variant="outline" size="icon" className="h-11 w-11 rounded-none md:hidden" aria-label="Open navigation" title="Open navigation"><Menu /></Button>
+            </SheetTrigger>
+            <SheetContent aria-describedby={undefined}>
+              <SheetTitle className="mt-6 text-left font-display text-3xl uppercase">Silver Brothers Racing</SheetTitle>
+              <nav className="mt-8 flex flex-col" aria-label="Mobile navigation">
+                {nav.map((n) => (
+                  <SheetClose asChild key={n.to}>
+                    <Link to={n.to} className="border-b py-4 font-mono text-[13px] font-semibold uppercase text-reading" activeProps={{ className: "text-foreground" }}>{n.label}</Link>
+                  </SheetClose>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   );
@@ -48,12 +66,11 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-8 md:flex-row md:items-end md:justify-between md:px-8">
         <div>
           <div className="font-display text-3xl font-bold uppercase italic">Silver Brothers Racing</div>
-          <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.18em] text-background/60">Clean racing. Close battles. One community.</p>
+          <p className="mt-2 font-mono text-xs text-background/75">© {new Date().getFullYear()} Silver Brothers Racing</p>
         </div>
-        <div className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[10px] uppercase tracking-wider">
+        <div className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs uppercase">
           <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="hover:text-primary">Discord ↗</a>
           <a href={JUSTRACE_URL} target="_blank" rel="noreferrer" className="hover:text-primary">JustRace ↗</a>
-          <span className="text-background/50">© {new Date().getFullYear()} SBR</span>
         </div>
       </div>
     </footer>
