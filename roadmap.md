@@ -1,4 +1,5 @@
 # Roadmap
+- [ ] Apply the uploaded homepage review: revised hero, readable controls, mobile drawer and simplified footer
 - [x] Home page for Silver Brothers Racing (Discord + JustRace links)
 - [x] Drivers, Championships, Events, Teams, Cars, Tracks pages auto-filled from JustRace
 - [x] Hide computer drivers from standings, results, profiles and career totals

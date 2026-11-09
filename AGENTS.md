@@ -11,3 +11,4 @@
 
 - League data (championships, events, drivers, tracks, cars) is fetched live from the public JustRace API in `src/lib/justrace.functions.ts` via one cached server function — no database, so pages stay in sync with JustRace automatically.
 - Filter JustRace computer drivers inside `parseStandings`, before any positions or aggregates are calculated, so every standings, results and career view applies the same exclusion.
+- Shared mobile navigation uses the existing Sheet and Button controls so the same six destinations remain accessible without a scrolling header.
