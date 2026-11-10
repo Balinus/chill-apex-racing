@@ -40,15 +40,13 @@ function Index() {
               A sim-racing league for drivers of all skill levels. Bring your race craft;
               we’ll bring close battles, clean driving and a community that helps you get faster.
             </p>
-            <div className="mt-8 flex flex-col items-start gap-3">
-              <Button asChild className="clip-panel h-auto rounded-none px-[26px] py-[17px] font-mono text-sm font-semibold uppercase shadow-none">
+            <div className="mt-8 flex w-full max-w-[320px] flex-col gap-3">
+              <Button asChild className="clip-panel h-[54px] w-full rounded-none px-[26px] font-mono text-sm font-semibold uppercase shadow-none">
                 <a href={JUSTRACE_URL} target="_blank" rel="noreferrer">Find your next race <ArrowUpRight /></a>
               </Button>
-              <Button asChild variant="outline" className="clip-panel h-auto rounded-none border-0 bg-foreground p-px shadow-none hover:bg-foreground">
-                <a href={DISCORD_URL} target="_blank" rel="noreferrer">
-                  <span className="clip-panel-inset flex items-center gap-2 bg-background px-[26px] py-[17px] font-mono text-sm font-semibold uppercase text-foreground">
-                    Join us on Discord <ArrowUpRight />
-                  </span>
+              <Button asChild variant="outline" className="clip-panel h-[54px] w-full rounded-none border-0 bg-foreground p-px shadow-none hover:bg-foreground">
+                <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="clip-panel-inset flex h-full w-full items-center justify-center gap-2 bg-background px-[26px] font-mono text-sm font-semibold uppercase text-foreground">
+                  Join us on Discord <ArrowUpRight />
                 </a>
               </Button>
             </div>
