@@ -94,3 +94,9 @@
 @utility clip-panel {
   clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 18px, 100% 100%, 0 100%);
 }
+/* Inset companion for clip-panel: sits 1px inside a clip-panel box so the
+   parent's background shows through as a continuous 1px outline, including
+   along the diagonal cut. */
+@utility clip-panel-inset {
+  clip-path: polygon(0 0, calc(100% - 17.4px) 0, 100% 17.4px, 100% 100%, 0 100%);
+}

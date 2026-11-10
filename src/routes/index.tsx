@@ -44,8 +44,12 @@ function Index() {
               <Button asChild className="clip-panel h-auto rounded-none px-[26px] py-[17px] font-mono text-sm font-semibold uppercase shadow-none">
                 <a href={JUSTRACE_URL} target="_blank" rel="noreferrer">Find your next race <ArrowUpRight /></a>
               </Button>
-              <Button asChild variant="outline" className="clip-panel h-auto rounded-none border-foreground px-[26px] py-[17px] font-mono text-sm font-semibold uppercase shadow-none">
-                <a href={DISCORD_URL} target="_blank" rel="noreferrer">Join the Discord <ArrowUpRight /></a>
+              <Button asChild variant="outline" className="clip-panel h-auto rounded-none border-0 bg-foreground p-px shadow-none hover:bg-foreground">
+                <a href={DISCORD_URL} target="_blank" rel="noreferrer">
+                  <span className="clip-panel-inset flex items-center gap-2 bg-background px-[26px] py-[17px] font-mono text-sm font-semibold uppercase text-foreground">
+                    Join us on Discord <ArrowUpRight />
+                  </span>
+                </a>
               </Button>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-5 gap-y-3 border-t pt-5 font-mono text-xs font-semibold uppercase text-reading">
