@@ -45,8 +45,10 @@ function Index() {
                 <a href={JUSTRACE_URL} target="_blank" rel="noreferrer">Find your next race <ArrowUpRight /></a>
               </Button>
               <Button asChild variant="outline" className="clip-panel h-[54px] w-full rounded-none border-0 bg-foreground p-px shadow-none hover:bg-foreground">
-                <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="clip-panel-inset flex h-full w-full items-center justify-center gap-2 bg-background px-[26px] font-mono text-sm font-semibold uppercase text-foreground">
-                  Join us on Discord <ArrowUpRight />
+                <a href={DISCORD_URL} target="_blank" rel="noreferrer">
+                  <span className="clip-panel-inset flex h-full w-full items-center justify-center gap-2 bg-background px-[26px] font-mono text-sm font-semibold uppercase text-foreground">
+                    Join us on Discord <ArrowUpRight />
+                  </span>
                 </a>
               </Button>
             </div>
