@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import hero from "@/assets/sauber-c9-endurance.jpg";
+import heroAsset from "@/assets/chill-apex-track-banner.png.asset.json";
 import { DISCORD_URL, JUSTRACE_URL } from "@/components/site";
 import { Button } from "@/components/ui/button";
 
@@ -53,18 +53,20 @@ function Index() {
                 </a>
               </Button>
             </div>
-            <div className="mt-10 flex flex-wrap gap-x-5 gap-y-3 border-t pt-5 font-mono text-xs font-semibold uppercase text-reading">
-              <span><b className="mr-2 text-teal">01</b>Clean racing</span><span><b className="mr-2 text-teal">02</b>Close battles</span><span><b className="mr-2 text-teal">03</b>All skill levels</span>
-            </div>
           </div>
 
-          <div className="flex items-center bg-secondary p-5 md:p-8">
+          <div className="flex flex-col justify-center gap-7 bg-secondary p-5 md:p-8">
             <figure className="clip-panel w-full bg-foreground text-background">
-              <img src={hero} alt="Representation of a Group C Sauber C9 in silver and orange livery on a wet circuit" width={1920} height={1440} className="aspect-[4/3] w-full object-cover" />
+              <img src={heroAsset.url} alt="Chill Apex Racing banner: a forested mountain circuit at sunset with a retro sliced sun and the words Sim Racing with Good Vibes" width={550} height={188} className="aspect-[550/188] w-full object-cover" />
               <figcaption className="p-5 md:p-6">
                 <div className="font-mono text-lg font-bold uppercase text-background">Chill Apex on track</div>
               </figcaption>
             </figure>
+            <ul className="grid gap-3 border-t pt-5 font-mono text-xs font-semibold uppercase text-reading">
+              <li><b className="mr-2 text-teal">01</b>Clean racing</li>
+              <li><b className="mr-2 text-teal">02</b>Close battles</li>
+              <li><b className="mr-2 text-teal">03</b>All skill levels</li>
+            </ul>
           </div>
         </div>
       </section>
