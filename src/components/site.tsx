@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetClose, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 export const DISCORD_URL = "https://www.discord.gg/YVWCtyACXj";
-export const JUSTRACE_URL = "https://silverbrothers.justrace.net";
+export const JUSTRACE_URL = "https://chillapexracing.justrace.net";
 
 const nav = [
   { to: "/drivers", label: "Drivers" },

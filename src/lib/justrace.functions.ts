@@ -3,7 +3,7 @@ import { queryOptions } from "@tanstack/react-query";
 import { assetUrl, parseStandings, type StandingRow } from "./justrace/parse";
 
 const API = "https://www.justrace.net/apiv3";
-const SUBDOMAIN = "silverbrothers";
+const SUBDOMAIN = "chillapexracing";
 
 async function get<T>(path: string): Promise<T> {
   const res = await fetch(`${API}${path}`, { headers: { Accept: "application/json" } });
