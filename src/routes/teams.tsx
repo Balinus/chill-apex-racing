@@ -4,9 +4,9 @@ import { DISCORD_URL, Empty, Page, PageHeader } from "@/components/site";
 export const Route = createFileRoute("/teams")({
   head: () => ({
     meta: [
-      { title: "Teams — Silver Brothers Racing" },
-      { name: "description", content: "Team rosters and team championship entries in Silver Brothers Racing." },
-      { property: "og:title", content: "Teams — Silver Brothers Racing" },
+      { title: "Teams — Chill Apex Racing" },
+      { name: "description", content: "Team rosters and team championship entries in Chill Apex Racing." },
+      { property: "og:title", content: "Teams — Chill Apex Racing" },
       { property: "og:description", content: "Team rosters and championship entries." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -13,14 +13,14 @@ export const Route = createFileRoute("/events/$id")({
   head: ({ loaderData }) => ({
     meta: loaderData
       ? [
-          { title: `${loaderData.title} — Silver Brothers Racing` },
+          { title: `${loaderData.title} — Chill Apex Racing` },
           { name: "description", content: `Details and results for ${loaderData.title}.` },
-          { property: "og:title", content: `${loaderData.title} — Silver Brothers Racing` },
+          { property: "og:title", content: `${loaderData.title} — Chill Apex Racing` },
           { property: "og:description", content: `Details and results for ${loaderData.title}.` },
           { property: "og:type", content: "website" },
           { name: "twitter:card", content: "summary_large_image" },
         ]
-      : [{ title: "Event — Silver Brothers Racing" }, { name: "robots", content: "noindex" }],
+      : [{ title: "Event — Chill Apex Racing" }, { name: "robots", content: "noindex" }],
   }),
   component: EventPage,
 });

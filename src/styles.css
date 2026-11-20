@@ -32,6 +32,10 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-silver: var(--silver);
+  --color-sunset: var(--sunset);
+  --color-gold: var(--gold);
+  --color-teal: var(--teal);
+  --font-script: "Kaushan Script", cursive;
   --color-reading: var(--reading);
   --color-discord: var(--discord);
   --color-discord-foreground: var(--discord-foreground);
@@ -39,33 +43,36 @@
 
 :root {
   --radius: 0.125rem;
-  --background: oklch(0.985 0.002 250);
-  --foreground: oklch(0.2 0.015 255);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.2 0.015 255);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.2 0.015 255);
-  --primary: oklch(0.63 0.2 52);
-  --primary-foreground: oklch(0.18 0.015 255);
-  --secondary: oklch(0.94 0.004 250);
-  --secondary-foreground: oklch(0.24 0.015 255);
-  --muted: oklch(0.95 0.003 250);
-  --muted-foreground: oklch(0.46 0.015 255);
-  --accent: oklch(0.25 0.015 255);
-  --accent-foreground: oklch(0.98 0.002 250);
+  --background: #f8e4c8;
+  --foreground: #222222;
+  --card: #fcefdc;
+  --card-foreground: #222222;
+  --popover: #fcefdc;
+  --popover-foreground: #222222;
+  --primary: #e56a1e;
+  --primary-foreground: #222222;
+  --secondary: #f0d5b0;
+  --secondary-foreground: #222222;
+  --muted: #f2dcbc;
+  --muted-foreground: #5a4a3c;
+  --accent: #0b7a78;
+  --accent-foreground: #f8e4c8;
   --destructive: oklch(0.55 0.21 27);
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.2 0.015 255 / 18%);
-  --input: oklch(0.2 0.015 255 / 25%);
-  --ring: oklch(0.63 0.2 52);
+  --border: rgb(34 34 34 / 22%);
+  --input: rgb(34 34 34 / 30%);
+  --ring: #0b7a78;
   --silver: oklch(0.42 0.015 255);
-  --reading: #353b42;
+  --reading: #3a3029;
+  --sunset: #c0391e;
+  --gold: #f2a423;
+  --teal: #0b7a78;
   --discord: oklch(0.58 0.2 277);
   --discord-foreground: oklch(0.98 0 0);
   --gradient-chrome: linear-gradient(180deg, oklch(0.25 0.015 255) 0%, oklch(0.43 0.015 255) 100%);
   --gradient-hero: linear-gradient(90deg, oklch(0.14 0.005 260 / 0.85) 0%, oklch(0.14 0.005 260 / 0.15) 70%);
   --shadow-glow: 5px 5px 0 oklch(0.2 0.015 255);
-  --shadow-panel: 6px 6px 0 oklch(0.2 0.015 255 / 9%);
+  --shadow-panel: 6px 6px 0 rgb(34 34 34 / 12%);
 }
 
 @layer base {
@@ -99,4 +106,13 @@
    along the diagonal cut. */
 @utility clip-panel-inset {
   clip-path: polygon(0 0, calc(100% - 17.4px) 0, 100% 17.4px, 100% 100%, 0 100%);
+}
+
+/* Sunset bands from the identity card: red, orange, gold. */
+@utility sunset-bands {
+  background: linear-gradient(180deg, var(--sunset) 0 33%, transparent 33% 40%, var(--primary) 40% 66%, transparent 66% 73%, var(--gold) 73% 100%);
+}
+/* Twin teal speed lines used under wordmarks and as section dividers. */
+@utility teal-lines {
+  background: linear-gradient(180deg, var(--teal) 0 35%, transparent 35% 65%, var(--teal) 65% 100%);
 }

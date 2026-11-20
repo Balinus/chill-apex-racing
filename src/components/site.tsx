@@ -18,19 +18,20 @@ const nav = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 border-b border-t-4 border-t-primary bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-30 overflow-hidden border-b-4 border-b-teal bg-foreground text-background">
+      <div aria-hidden className="sunset-bands absolute left-0 top-0 hidden h-full w-20 -skew-x-[30deg] -translate-x-6 opacity-90 lg:block" />
       <div className="mx-auto flex max-w-7xl items-center gap-5 px-5 py-3 md:px-8">
-        <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Silver Brothers Racing home">
-          <span className="clip-panel flex h-11 w-11 items-center justify-center bg-foreground font-display text-2xl font-bold italic text-background">SB</span>
-          <span className="hidden font-mono text-[10px] font-semibold uppercase leading-4 tracking-[0.18em] text-muted-foreground sm:block">
-            Silver Brothers<br /><span className="text-foreground">Racing League</span>
+        <Link to="/" className="flex shrink-0 items-center gap-3" aria-label="Chill Apex Racing home">
+          <span className="flex flex-col leading-none lg:pl-10">
+            <span className="font-script text-2xl text-background md:text-3xl">Chill Apex</span>
+            <span className="mt-1 font-display text-sm font-bold uppercase italic tracking-[0.3em] text-primary">Racing</span>
           </span>
         </Link>
         <nav className="hidden flex-1 gap-4 px-1 font-mono text-[13px] font-semibold uppercase md:flex lg:gap-5" aria-label="Main navigation">
           {nav.map((n) => (
             <Link key={n.to} to={n.to}
-              className="whitespace-nowrap border-b-2 border-transparent py-2 text-reading transition-colors hover:border-primary hover:text-foreground"
-              activeProps={{ className: "border-primary text-foreground" }}>
+              className="whitespace-nowrap border-b-2 border-transparent py-2 text-background/80 transition-colors hover:border-primary hover:text-background"
+              activeProps={{ className: "border-primary text-background" }}>
               {n.label}
             </Link>
           ))}
@@ -41,10 +42,10 @@ export function SiteHeader() {
           </Button>
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="h-11 w-11 rounded-none md:hidden" aria-label="Open navigation" title="Open navigation"><Menu /></Button>
+              <Button variant="outline" size="icon" className="h-11 w-11 rounded-none border-background/40 bg-transparent text-background md:hidden" aria-label="Open navigation" title="Open navigation"><Menu /></Button>
             </SheetTrigger>
             <SheetContent aria-describedby={undefined}>
-              <SheetTitle className="mt-6 text-left font-display text-3xl uppercase">Silver Brothers Racing</SheetTitle>
+              <SheetTitle className="mt-6 text-left font-display text-3xl uppercase">Chill Apex Racing</SheetTitle>
               <nav className="mt-8 flex flex-col" aria-label="Mobile navigation">
                 {nav.map((n) => (
                   <SheetClose asChild key={n.to}>
@@ -62,11 +63,11 @@ export function SiteHeader() {
 
 export function SiteFooter() {
   return (
-    <footer className="bg-foreground text-background">
+    <footer className="border-t-4 border-t-teal bg-foreground text-background">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 px-5 py-8 md:flex-row md:items-end md:justify-between md:px-8">
         <div>
-          <div className="font-display text-3xl font-bold uppercase italic">Silver Brothers Racing</div>
-          <p className="mt-2 font-mono text-xs text-background/75">© {new Date().getFullYear()} Silver Brothers Racing</p>
+          <div className="font-script text-4xl">Chill Apex <span className="font-display font-bold uppercase italic text-primary">Racing</span></div>
+          <p className="mt-2 font-mono text-xs text-background/75">© {new Date().getFullYear()} Chill Apex Racing</p>
         </div>
         <div className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs uppercase">
           <a href={DISCORD_URL} target="_blank" rel="noreferrer" className="hover:text-primary">Discord ↗</a>
@@ -81,7 +82,8 @@ export function PageHeader({ title, subtitle, children }: { title: string; subti
   return (
     <section className="relative overflow-hidden border-b bg-secondary/50">
       <div className="relative mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
-        <h1 className="max-w-5xl font-display text-6xl font-bold uppercase leading-[0.9] tracking-tight md:text-8xl">{title}</h1>
+        <h1 className="max-w-5xl font-display text-6xl font-bold uppercase italic leading-[0.9] tracking-tight md:text-8xl">{title}</h1>
+        <div aria-hidden className="teal-lines mt-5 h-2 w-40" />
         {subtitle && <p className="mt-5 max-w-2xl text-lg text-muted-foreground">{subtitle}</p>}
         {children}
       </div>

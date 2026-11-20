@@ -1,5 +1,6 @@
 # Roadmap
 - [x] Apply the uploaded homepage review: revised hero, readable controls, mobile drawer and simplified footer
+- [x] Apply the visual identity card and rename the site to Chill Apex Racing
 - [ ] Hide the Lovable badge — blocked by editor role / Pro plan requirement
 - [ ] Add current season dates to footer — awaiting confirmed season dates
 - [x] Home page for Silver Brothers Racing (Discord + JustRace links)

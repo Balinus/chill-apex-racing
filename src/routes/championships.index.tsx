@@ -6,9 +6,9 @@ import { Badge, DataNote, Empty, Page, PageHeader } from "@/components/site";
 export const Route = createFileRoute("/championships/")({
   head: () => ({
     meta: [
-      { title: "Championships — Silver Brothers Racing" },
-      { name: "description", content: "Current and past Silver Brothers Racing championships with full standings." },
-      { property: "og:title", content: "Championships — Silver Brothers Racing" },
+      { title: "Championships — Chill Apex Racing" },
+      { name: "description", content: "Current and past Chill Apex Racing championships with full standings." },
+      { property: "og:title", content: "Championships — Chill Apex Racing" },
       { property: "og:description", content: "Current and past championships with full standings." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

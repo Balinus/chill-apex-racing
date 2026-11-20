@@ -6,9 +6,9 @@ import { DataNote, Empty, Flag, Page, PageHeader, td, th } from "@/components/si
 export const Route = createFileRoute("/drivers/")({
   head: () => ({
     meta: [
-      { title: "Drivers — Silver Brothers Racing" },
-      { name: "description", content: "Silver Brothers Racing driver profiles, wins, podiums and championship history." },
-      { property: "og:title", content: "Drivers — Silver Brothers Racing" },
+      { title: "Drivers — Chill Apex Racing" },
+      { name: "description", content: "Chill Apex Racing driver profiles, wins, podiums and championship history." },
+      { property: "og:title", content: "Drivers — Chill Apex Racing" },
       { property: "og:description", content: "Driver profiles, wins, podiums and championship history." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

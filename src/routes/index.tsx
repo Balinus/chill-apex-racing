@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Silver Brothers Racing — Sim-Racing League" },
-      { name: "description", content: "Join Silver Brothers Racing: championships, race events, standings and a friendly sim-racing community." },
-      { property: "og:title", content: "Silver Brothers Racing — Sim-Racing League" },
+      { title: "Chill Apex Racing — Sim-Racing League" },
+      { name: "description", content: "Join Chill Apex Racing: championships, race events, standings and a friendly sim-racing community." },
+      { property: "og:title", content: "Chill Apex Racing — Sim-Racing League" },
       { property: "og:description", content: "Championships, race events, standings and a friendly sim-racing community." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -33,9 +33,10 @@ function Index() {
       <section className="relative overflow-hidden border-b">
         <div className="relative mx-auto grid max-w-7xl lg:grid-cols-[1.05fr_0.95fr]">
           <div className="flex flex-col justify-center px-5 py-16 md:px-8 md:py-24 lg:pr-14">
-            <h1 className="font-display text-[52px] font-bold uppercase leading-[0.95] sm:text-6xl md:text-7xl">
-              The next<br /><span className="text-primary">green flag</span><br />starts with you.
+            <h1 className="font-script text-[48px] leading-[1.05] sm:text-6xl md:text-7xl">
+              The next <span className="text-sunset">green flag</span> starts with you.
             </h1>
+            <div aria-hidden className="teal-lines mt-6 h-2 w-48" />
             <p className="mt-7 max-w-lg text-xl leading-relaxed text-reading">
               A sim-racing league for drivers of all skill levels. Bring your race craft;
               we’ll bring close battles, clean driving and a community that helps you get faster.
@@ -53,7 +54,7 @@ function Index() {
               </Button>
             </div>
             <div className="mt-10 flex flex-wrap gap-x-5 gap-y-3 border-t pt-5 font-mono text-xs font-semibold uppercase text-reading">
-              <span><b className="mr-2 text-primary">01</b>Clean racing</span><span><b className="mr-2 text-primary">02</b>Close battles</span><span><b className="mr-2 text-primary">03</b>All skill levels</span>
+              <span><b className="mr-2 text-teal">01</b>Clean racing</span><span><b className="mr-2 text-teal">02</b>Close battles</span><span><b className="mr-2 text-teal">03</b>All skill levels</span>
             </div>
           </div>
 
@@ -61,7 +62,7 @@ function Index() {
             <figure className="clip-panel w-full bg-foreground text-background">
               <img src={hero} alt="Representation of a Group C Sauber C9 in silver and orange livery on a wet circuit" width={1920} height={1440} className="aspect-[4/3] w-full object-cover" />
               <figcaption className="p-5 md:p-6">
-                <div className="font-mono text-lg font-bold uppercase text-background">SBR on track</div>
+                <div className="font-mono text-lg font-bold uppercase text-background">Chill Apex on track</div>
               </figcaption>
             </figure>
           </div>
@@ -69,7 +70,7 @@ function Index() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
-        <h2 className="font-display text-5xl font-bold uppercase leading-none md:text-6xl">Paddock directory</h2>
+        <h2 className="font-display text-5xl font-bold uppercase italic leading-none md:text-6xl">Paddock directory</h2>
         <div className="mt-10 border-t">
           {sections.map((s, i) => (
             <Link key={s.title} to={s.path}
@@ -85,9 +86,9 @@ function Index() {
         </div>
       </section>
 
-      <section className="border-y bg-primary text-primary-foreground">
+      <section className="border-y-4 border-y-teal bg-sunset text-background">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-12 md:grid-cols-[1fr_auto] md:items-center md:px-8">
-          <h2 className="font-display text-5xl font-bold uppercase leading-none md:text-6xl">Come race with us.</h2>
+          <h2 className="font-script text-5xl leading-none md:text-6xl">Come race with us.</h2>
           <Button asChild className="clip-panel h-auto w-fit rounded-none bg-foreground px-[26px] py-[17px] font-mono text-sm font-semibold uppercase text-background shadow-none hover:bg-foreground/90">
             <a href={DISCORD_URL} target="_blank" rel="noreferrer">Say hello on Discord <ArrowUpRight /></a>
           </Button>

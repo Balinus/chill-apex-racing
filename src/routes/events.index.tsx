@@ -6,9 +6,9 @@ import { Badge, DataNote, Empty, JUSTRACE_URL, Page, PageHeader } from "@/compon
 export const Route = createFileRoute("/events/")({
   head: () => ({
     meta: [
-      { title: "Race Events — Silver Brothers Racing" },
-      { name: "description", content: "Upcoming and completed Silver Brothers Racing events and results." },
-      { property: "og:title", content: "Race Events — Silver Brothers Racing" },
+      { title: "Race Events — Chill Apex Racing" },
+      { name: "description", content: "Upcoming and completed Chill Apex Racing events and results." },
+      { property: "og:title", content: "Race Events — Chill Apex Racing" },
       { property: "og:description", content: "Upcoming and completed race events and results." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
