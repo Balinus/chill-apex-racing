@@ -8,3 +8,5 @@
 - [x] Hide computer drivers from standings, results, profiles and career totals
 - [x] Give the site a distinct Silver Brothers visual identity
 - [x] Bring Group C endurance-racing character into the visual identity
+- [x] Replace the hero car image with the uploaded sunset track banner
+- [ ] Rename the Lovable site address from silver-brothers-racing to chill-apex-racing — project renamed; the URL slug itself must be changed by Philippe in Project settings → URL subdomain
