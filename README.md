@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Chill Apex Racing
+
+Can you create a webpage similar to https://the-racing-enthusiasts.lovable.app/ ? I want to create one for my racing league "Silver Brothers Racing" which has events running on silverbrothers.justrace.net and a @connector:discord:"Discord" page https://www.discord.gg/YVWCtyACXj
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://chill-apex-racing.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/6505f326-e6d6-407f-992b-50b4eba8c504).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
