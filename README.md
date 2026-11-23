@@ -1,6 +1,6 @@
 # Chill Apex Racing
 
-Can you create a webpage similar to https://the-racing-enthusiasts.lovable.app/ ? I want to create one for my racing league "Silver Brothers Racing" which has events running on silverbrothers.justrace.net and a @connector:discord:"Discord" page https://www.discord.gg/YVWCtyACXj
+Sim racing league "Chill Apex Racing", with events running on chillapexracing.justrace.net and a @connector:discord:"Discord" page https://www.discord.gg/YVWCtyACXj
 
 This project was built with [Lovable](https://lovable.dev).
 
